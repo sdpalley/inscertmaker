@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+<div class="container" id="this">
+  <div class="row">
+    <div class="col-xs-12" style="border-right:1px solid lightgray" >
+<h3>Settlement Agreement</h3>
+<h4>Term Sheet</h4>
+<hr>
+
+
+<%=@settle_agree.intro_text %> 
+
+</p>
+<p>This agreement is entered into by <strong><%= @settle_agree.plaintiff %></strong> and <strong><%= @settle_agree.defendant %>.</strong>  The parties agree that the following shall terms apply:
+
+<p>
+  The parties agree to a settlement payment amount of: $<strong>
+  <%=@settle_agree.settle_amount %></strong>
+</p>
+
+<p>
+  Payment shall be made on or before:<strong>
+  <%= @settle_agree.pay_date %>
+</p></strong>
+
+<p>
+  This settlement will include a release of all claims related to litigation between the parties pending in <strong>
+  <%= @settle_agree.court %></strong>
+</p>
+
+<p>
+ The parties agree to keep the settlement agreement confidential:<strong>
+  <%= @settle_agree.confidential %></strong>
+</p
+
+<p>
+  The agreement will be subject to the law of the following jurisdiction <strong>
+  <%= @settle_agree.choice_of_law %></strong>
+</p>
+
+<p>
+ Notice to parties will be provided to:<strong>
+  <%= @settle_agree.notice_to %> </strong>
+</p>
+
+<p>
+  Indemnity language (if any) will cover:<strong>
+  <%= @settle_agree.indemnity %></strong>
+</p>
+<p>
+  Signatures appear here:<strong>
+  <%= @settle_agree.signature_block %></strong>
+</p>
+<p>Date:</p>
+<hr>
+<%= link_to 'Edit', edit_settle_agree_path(@settle_agree) %> |
+<%= link_to 'Back | ', settle_agrees_path %>
+<a onClick="window.print()">Print | </a>
+<a href="#">Download | </a>
+<%= link_to 'Home', root_url %>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plaintiff: MyString
+  defendant: MyString
+  settle_amount: 1
+  pay_date: 2014-07-12
+  court: MyString
+  confidential: false
+  choice_of_law: MyString
+  signature_block: MyString
+  case_type: MyString
+  notice_to: MyString
+  indemnity: MyString
+  required: false
+
+two:
+  plaintiff: MyString
+  defendant: MyString
+  settle_amount: 1
+  pay_date: 2014-07-12
+  court: MyString
+  confidential: false
+  choice_of_law: MyString
+  signature_block: MyString
+  case_type: MyString
+  notice_to: MyString
+  indemnity: MyString
+  required: false

@@ -1,0 +1,336 @@
+<style>
+.spinner
+{
+ width:50px; 
+}
+</style>
+
+<%= form_for(@settle_agree) do |f| %>
+  <% if @settle_agree.errors.any? %>
+    <div id="error_explanation">
+
+      <h2>Oops!  Looks like there are some fields you need to take a look at before we save this.  I see the following <%= (@settle_agree.errors.count)%> "issue(s)"):</h2>
+<br>
+      <ul>
+      <% @settle_agree.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+
+      <% end %>
+     <br>
+      </ul>
+    </div>
+    <br>
+  <% end %>
+
+</br>
+<div class="field" >
+  <%=f.label :Introduction%><p>You can edit or remove the sample text below.  Whatever you include in this field will appear at the top of your agreement.</p>
+  <br>
+    <%=f.text_area :intro_text, :style => "width:90%; height:250px; text-align:left; overflow:scroll", :value => "'THIS DOCUMENT IS CONFIDENTIAL AND HAS BEEN CREATED AND TRANSMITTED TO YOU FOR SETTLEMENT PURPOSES ONLY.  THE PARTIES AGREE THAT THIS DOCUMENT IS AND SHALL BE INADMISSABLE IN ANY COURT PROCEEDING, SUBJECT TO RULE 408 OF THE FEDERAL RULES OF CIVIL PROCEDURE OR THE BROADEST EQUIVALENT STATE COURT RULE, STATUTE OR REGULATION PROTECTING SETTLEMENT DISCUSSIONS.'' " %><br>
+<button btn-lg><a href="#">Disclaimer Library</a></button>
+</div>
+
+
+  <div class="field" >
+    <%= f.label :plaintiff %><br>
+    <%= f.text_field :plaintiff %>
+  </div>
+  <div class="field">
+    <%= f.label :defendant %><br>
+    <%= f.text_field :defendant %>
+  </div>
+  <div class="field">
+    <%= f.label :settle_amount %><br>
+    <%= f.number_field :settle_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_date %><br>
+    <%= f.date_select :pay_date %>
+  </div>
+<!-- thanks to http://www.thegreenpapers.com/Hx/FederalCourtSystem.phtml for the list, though I have not independently verified its up-to-dateness-->
+  <div class="field">
+     <%= f.label :Federal_Courts %><br>
+     <%= f.select(:court, [
+['U.S.D.C. D. of MAINE'],
+['U.S.D.C. D. of MASS'],
+['U.S.D.C. D. of N.H.'],
+['U.S.D.C. D. of PUERTO RICO'],
+['U.S.D.C. D. of RHODE ISLAND'],
+['U.S.D.C. D. of CONNECTICUT'],
+['U.S.D.C. E. D. of NEW YORK'],
+['U.S.D.C. N. D. of NEW YORK'],
+['U.S.D.C. S.D. NEW YORK'],
+['U.S.D.C. W. D. of NEW YORK'],
+['U.S.D.C. D. of VERMONT'],
+['U.S.D.C. D. of DELAWARE'],
+['U.S.D.C. D. of NEW JERSEY'],
+['U.S.D.C. E. D. of PA'],
+['U.S.D.C. M. D. of PENNSYLVANIA'],
+['U.S.D.C. W. D. of PENNSYLVANIA'],
+['U.S.D.C. D. of the VIRGIN ISLANDS'],
+['U.S.D.C. D. of MARYLAND'],
+['U.S.D.C. E. D. of NORTH CAROLINA'],
+['U.S.D.C. M. D. of NORTH CAROLINA'],
+['U.S.D.C. W. D. of NORTH CAROLINA'],
+['U.S.D.C. D. of SOUTH CAROLINA'],
+['U.S.D.C. E. D. of VIRGINIA'],
+['U.S.D.C. W. D. of VIRGINIA'],
+['U.S.D.C. N. D. of WEST VIRGINIA'],
+['U.S.D.C. S.D. WEST VIRGINIA'],
+['U.S.D.C. E. D. of Louisiana'],
+['U.S.D.C. M. D. of LOuisiana'],
+['U.S.D.C. W. D. of LOusiana'],
+['U.S.D.C. N. D. of MISSISSIPPI'],
+['U.S.D.C. S.D. MISSISSIPPI'],
+['U.S.D.C. E. D. of TEXAS'],
+['U.S.D.C. N. D. of TEXAS'],
+['U.S.D.C. S.D. TEXAS'],
+['U.S.D.C. W. D. of TEXAS'],
+['U.S.D.C. E. D. of KENTUCKY'],
+['U.S.D.C. W. D. of KENTUCKY'],
+['U.S.D.C. E. D. of MICHIGAN'],
+['U.S.D.C. W. D. of MICHIGAN'],
+['U.S.D.C. N. D. of OHIO'],
+['U.S.D.C. S.D. OHIO'],
+['U.S.D.C. E. D. of TENNESSEE'],
+['U.S.D.C. M. D. of TENNESSEE'],
+['U.S.D.C. W. D. of TENNESSEE'],
+['U.S.D.C. C. D. of ILLINOIS'],
+['U.S.D.C. N. D. of ILLINOIS'],
+['U.S.D.C. S.D. ILLINOIS'],
+['U.S.D.C. N. D. of INDIANA'],
+['U.S.D.C. S.D. INDIANA'],
+['U.S.D.C. E. D. of WISCONSIN'],
+['U.S.D.C. W. D. of WISCONSIN'],
+['U.S.D.C. E. D. of ARKANSAS'],
+['U.S.D.C. W. D. of ARKANSAS'],
+['U.S.D.C. N. D. of IOWA'],
+['U.S.D.C. S.D. IOWA'],
+['U.S.D.C. D. of MINNESOTA'],
+['U.S.D.C. E. D. of MISSOURI'],
+['U.S.D.C. W. D. of MISSOURI'],
+['U.S.D.C. D. of NEBRASKA'],
+['U.S.D.C. D. of NORTH DAKOTA'],
+['U.S.D.C. D. of SOUTH DAKOTA-'],
+['U.S.D.C. D. of ALASKA'],
+['U.S.D.C. D. of ARIZONA'],
+['U.S.D.C. C. D. of CALIFORNIA'],
+['U.S.D.C. E. D. of CALIFORNIA'],
+['U.S.D.C. N. D. of CALIFORNIA'],
+['U.S.D.C. S.D. CALIFORNIA'],
+['U.S.D.C. D. of GUAM'],
+['U.S.D.C. D. of HAWAII'],
+['U.S.D.C. D. of IDAHO'],
+['U.S.D.C. D. of MONTANA'],
+['U.S.D.C. D. of NEVADA'],
+['U.S.D.C. D. of the N. MARIANA ISLANDS'],
+['U.S.D.C. D. of OREGON'],
+['U.S.D.C. E. D. of WASHINGTON'],
+['U.S.D.C. W. D. of WASHINGTON'],
+['U.S.D.C. D. of COLORADO'],
+['U.S.D.C. D. of KANSAS'],
+['U.S.D.C. D. of NEW MEXICO'],
+['U.S.D.C. E. D. of OKLAHOMA'],
+['U.S.D.C. N. D. of OKLAHOMA'],
+['U.S.D.C. W. D. of OKLAHOMA'],
+['U.S.D.C. D. of UTAH'],
+['U.S.D.C. D. of WYOMING'],
+['U.S.D.C. M. D. of ALABAMA'],
+['U.S.D.C. N. D. of ALABAMA'],
+['U.S.D.C. S.D. ALABAMA'],
+['U.S.D.C. M. D. of FLORIDA'],
+['U.S.D.C. N. D. of FLORIDA'],
+['U.S.D.C. S.D. FLORIDA'],
+['U.S.D.C. M. D. of GEORGIA'],
+['U.S.D.C. N.D. Ga.'],
+['U.S.D.C. S.D. Ga.'],
+['U.S.D.C. D.C']]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confidential %><br>
+    <%= f.check_box :confidential %>
+  </div>
+    <div class="field">
+    <%= f.label :choice_of_law %><br>
+     <%= f.select(:choice_of_law, [['Alabama'],
+['Alaska'],
+['American Samoa'],
+['Arizona'],
+['Arkansas'],
+['California'],
+['Colorado'],
+['Connecticut'],
+['Delaware'],
+['D. Of Columbia'],
+['Federated States Of Micronesia'],
+['Florida'],
+['Georgia'],
+['Guam'],
+['Hawaii'],
+['Idaho'],
+['Illinois'],
+['Indiana'],
+['Iowa'],
+['Kansas'],
+    ['Kentucky'],
+    ['Louisiana'],
+    ['Maine'],
+    ['Marshall Islands'],
+    ['Maryland'],
+    ['Massachusetts'],
+    ['Michigan'],
+    ['Minnesota'],
+    ['Mississippi'],
+    ['Missouri'],
+    ['Montana'],
+    ['Nebraska'],
+    ['Nevada'],
+    ['New Hampshire'],
+    ['New Jersey'],
+    ['New Mexico'],
+    ['New York'],
+    ['North Carolina'],
+    ['North Dakota'],
+    ['N. Mariana Islands'],
+    ['Ohio'],
+    ['Oklahoma'],
+    ['Oregon'],
+    ['Palau'],
+    ['Pennsylvania'],
+    ['Puerto Rico'],
+    ['Rhode Island'],
+    ['South Carolina'],
+    ['South Dakota'],
+    ['Tennessee'],
+    ['Texas'],
+    ['Utah'],
+    ['Vermont'],
+    ['Virgin Islands'],
+    ['Virginia'],
+    ['Washington'],
+    ['West Virginia'],
+    ['Wisconsin'],
+    ['Wyoming']]) %>
+    
+  </div>
+  <div class="field">
+    <%= f.label :signature_block %><br>
+    <%= f.text_field :signature_block %>
+  </div>
+  <div class="field">
+    <%= f.label :case_type %><br>
+    <%= f.select(:case_type, [['110 Insurance'],
+['120 Marine'],
+['130 Miller Act'],
+['140 Negotiable Instrument'],
+['150 Recovery of Overpayment'],
+['151 Medicare Act'],
+['152 Recovery of Def. Student Loans'],
+['153 Recovery of Overpay (Vet Benefits)'],
+['160 Stockholders􏰀 Suits'],
+['190 Other Contract'],
+['195 Contract Product Liability'],
+['196 Franchise'],
+['210 Land Condemnation'], 
+['220 Foreclosure'],
+['230 Rent Lease & Ejectment'],
+['240 Torts to Land'],
+['245 Tort Product Liability '],
+['290 All Other Real Property'],
+['310 Airplane'],
+['315 Airplane Product Liability'],
+['320 Assault, Libel, & Slander'],
+['330 Federal Employers􏰀 Liability'],
+['340 Marine'],
+['345 Marine Product Liability'],
+['350 Motor Vehicle'],
+['355 Motor Vehicle Product Liability'],
+['360 Other Personal Injury'],
+['362 Personal Injury- Medical Mal.'],
+['365 Personal Injury- Product Liab.'],
+['367 Personal Injury -'],
+['368 Asbestos Personal Injuryy'],
+['375 False Claims Act'],
+['370 Other Fraud'],
+['371 Truth in Lending'],
+['380 Other Personal Property Damage'],
+['385 Property Damage Product Liability'],
+['422 Appeal 28 USC 158'],
+['423 Withdrawal 28 USC 157'],
+['440 Other Civil Rights'],
+['441 Voting'],
+['442 Employment'],
+['443 Housing/Accommodations'],
+['444 Welfare1'],
+['445 Amer w/Disabilities-Employment'],
+['446 Amer w/Disabilities - Other'],
+['448 Education'],
+['462 Naturalization Application'],
+['463 Habeas Corpus - Alien Detainee'],
+['465 Other Immigration Actions'],
+['510 Motions to Vacate Sentence'],
+['530 General'],
+['535 Death Penalty'],
+['540 Mandamus & Other'],
+['550 Civil Rights'],
+['555 Prison Condition'],
+['560 Conditions of Confinement'],
+['610 Agriculture1'],
+['620 Other Food & Drug1'],
+['625 Drug Related Seizure of Property'],
+['640 RR & Truck1'],
+['650 Airline Regulations1'],
+['660 Occupational Safety/Health1'],
+['690 Other'],
+['710 Fair Labor Standards Act'],
+['720 Labor/Management Relations'],
+['730 Labor/Management Reporting & '],
+['740 Railway Labor Act'],
+['751 Family and Medical Leave Act'],
+['790 Other Labor Litigation'],
+['791 ERISA'],
+['820 Copyrights 830 Patent'],
+['840 Trademark'],
+['861 HIA (1395ff)'],
+['862 Black Lung (923)'],
+['863 DIWC/DIWW (405(g))'],
+['864 SSID Title XVI'],
+['865 RSI (405(g))'],
+['870 Taxes (U.S. Plaintiff or Defendant)'], 
+['871 IRS-Third Party 26 USC 7609'],
+['400 State Reapportionment'],
+['410 Antitrust'],
+['430 Banks and Banking'],
+['450 Commerce'],
+['460 Deportation'],
+['470 RICO '],
+['480 Consumer Credit'],
+['490 Cable/Sat TV'],
+['810 Selective Service1'],
+['850 Securities/Commodities/Exchange'],
+['875 Customer Challenge 12 USC 34101'],
+['890 Other Statutory Actions'],
+['891 Agricultural Acts'],
+['892 Economic Stabilization Act1'],
+['893 Environmental Matters'],
+['894 Energy Allocation Act1'],
+['895 Freedom of Information Act']])
+%>
+  </div>
+  <div class="field">
+    <%= f.label :notice_to %><br>
+    <%= f.text_field :notice_to %>
+  </div>
+  <div class="field">
+    <%= f.label :indemnity %><br>
+    <%= f.text_field :indemnity %>
+  </div>
+  <div class="field">
+    <%= f.label :required %><br>
+    <%= f.check_box :required %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

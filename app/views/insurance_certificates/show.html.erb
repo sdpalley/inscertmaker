@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Form number:</strong>
+  <%= @insurance_certificate.form_number %>
+</p>
+
+<p>
+  <strong>Insuror:</strong>
+  <%= @insurance_certificate.insuror %>
+</p>
+
+<p>
+  <strong>Occurrence limit:</strong>
+  <%= @insurance_certificate.occurrence_limit %>
+</p>
+
+<p>
+  <strong>Aggregate limit:</strong>
+  <%= @insurance_certificate.aggregate_limit %>
+</p>
+
+<p>
+  <strong>Named insured:</strong>
+  <%= @insurance_certificate.named_insured %>
+</p>
+
+<p>
+  <strong>Policy start date:</strong>
+  <%= @insurance_certificate.policy_start_date %>
+</p>
+
+<p>
+  <strong>Policy end date:</strong>
+  <%= @insurance_certificate.policy_end_date %>
+</p>
+
+<p>
+  <strong>Certificate holder:</strong>
+  <%= @insurance_certificate.certificate_holder %>
+</p>
+
+<p>
+  <strong>Additional insured:</strong>
+  <%= @insurance_certificate.additional_insured %>
+</p>
+
+<p>
+  <strong>Number of certificates issued:</strong>
+  <%= @insurance_certificate.number_of_certificates_issued %>
+</p>
+
+<%= link_to 'Edit', edit_insurance_certificate_path(@insurance_certificate) %> |
+<%= link_to 'Back', insurance_certificates_path %>

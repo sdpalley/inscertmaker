@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_number: 1
+  insuror: MyString
+  occurrence_limit: 1
+  aggregate_limit: 1
+  named_insured: MyString
+  policy_start_date: 2016-02-21
+  policy_end_date: 2016-02-21
+  certificate_holder: MyString
+  additional_insured: MyString
+  number_of_certificates_issued: 1
+
+two:
+  form_number: 1
+  insuror: MyString
+  occurrence_limit: 1
+  aggregate_limit: 1
+  named_insured: MyString
+  policy_start_date: 2016-02-21
+  policy_end_date: 2016-02-21
+  certificate_holder: MyString
+  additional_insured: MyString
+  number_of_certificates_issued: 1

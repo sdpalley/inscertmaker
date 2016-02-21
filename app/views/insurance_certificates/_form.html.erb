@@ -1,0 +1,57 @@
+<%= form_for(@insurance_certificate) do |f| %>
+  <% if @insurance_certificate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@insurance_certificate.errors.count, "error") %> prohibited this insurance_certificate from being saved:</h2>
+
+      <ul>
+      <% @insurance_certificate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :form_number %><br>
+    <%= f.number_field :form_number %>
+  </div>
+  <div class="field">
+    <%= f.label :insuror %><br>
+    <%= f.text_field :insuror %>
+  </div>
+  <div class="field">
+    <%= f.label :occurrence_limit %><br>
+    <%= f.number_field :occurrence_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :aggregate_limit %><br>
+    <%= f.number_field :aggregate_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :named_insured %><br>
+    <%= f.text_field :named_insured %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_start_date %><br>
+    <%= f.date_select :policy_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_end_date %><br>
+    <%= f.date_select :policy_end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate_holder %><br>
+    <%= f.text_field :certificate_holder %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_insured %><br>
+    <%= f.text_field :additional_insured %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_certificates_issued %><br>
+    <%= f.number_field :number_of_certificates_issued %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

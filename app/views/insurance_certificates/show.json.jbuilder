@@ -1,0 +1,1 @@
+json.extract! @insurance_certificate, :id, :form_number, :insuror, :occurrence_limit, :aggregate_limit, :named_insured, :policy_start_date, :policy_end_date, :certificate_holder, :additional_insured, :number_of_certificates_issued, :created_at, :updated_at

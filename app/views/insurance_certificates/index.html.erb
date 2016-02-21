@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+<h1>Insurance Certificates</h1>
+
+<table id="certTable" class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Form number</th>
+      <th>Insuror</th>
+      <th>Occurrence limit</th>
+      <th>Aggregate limit</th>
+      <th>Named insured</th>
+      <th>Policy start date</th>
+      <th>Policy end date</th>
+      <th>Certificate holder</th>
+      <th>Additional insured</th>
+      <th>Number of certificates issued</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insurance_certificates.each do |insurance_certificate| %>
+      <tr>
+        <td><%= insurance_certificate.form_number %></td>
+        <td><%= insurance_certificate.insuror %></td>
+        <td><%= insurance_certificate.occurrence_limit %></td>
+        <td><%= insurance_certificate.aggregate_limit %></td>
+        <td><%= insurance_certificate.named_insured %></td>
+        <td><%= insurance_certificate.policy_start_date %></td>
+        <td><%= insurance_certificate.policy_end_date %></td>
+        <td><%= insurance_certificate.certificate_holder %></td>
+        <td><%= insurance_certificate.additional_insured %></td>
+        <td><%= insurance_certificate.number_of_certificates_issued %></td>
+        <td><%= link_to 'Show', insurance_certificate %></td>
+        <td><%= link_to 'Edit', edit_insurance_certificate_path(insurance_certificate) %></td>
+        <td><%= link_to 'Destroy', insurance_certificate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New Insurance Certificate', new_insurance_certificate_path %>
+
+<script src ="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('#certTable').dataTable();
+});
+
+</script>
