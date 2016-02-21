@@ -1,3 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "jquery-ui";
+
 @import url(http://fonts.googleapis.com/css?family=Arimo);
 
 .field {
@@ -17,4 +21,3 @@ textarea {
         border-radius: 25px 10px / 10px 25px;
    font-family:Arimo;
 }
-
