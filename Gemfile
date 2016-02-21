@@ -14,7 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem 'rails_12factor'
 gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -29,7 +28,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'thin'
-gem 'pg', group: :production
+group :production do
+	gem 'pg', '0.17.1' #or version of pg you want
+	gem 'rails_12factor', '0.0.2' #Heroku static assets for image and css
+end
 gem 'c3d'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
